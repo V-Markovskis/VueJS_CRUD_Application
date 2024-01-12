@@ -1,10 +1,13 @@
 <template>
-  <div v-for="(viking, index) in vikings" :key="viking.id">
-    <img :src="viking.image" :alt="viking.name" />
-    <h3>Name: {{ viking.name }}</h3>
-    <small>Power: {{ viking.power }}</small>
-    <p>Description: {{ viking.description }}</p>
+  <div v-if="vikings.length > 0">
+    <div v-for="(viking, index) in vikings" :key="viking.id">
+      <img :src="viking.image" :alt="viking.name" width="200" />
+      <h3>Name: {{ viking.type }}</h3>
+      <small>Power: {{ viking.power }}</small>
+      <p>Description: {{ viking.description }}</p>
+    </div>
   </div>
+  <div v-else>No records about vikings</div>
 </template>
 
 <script>

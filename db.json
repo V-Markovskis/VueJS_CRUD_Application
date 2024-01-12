@@ -1,39 +1,25 @@
 {
   "vikings": [
     {
-      "id": 1,
+      "id": "6662",
       "image": "https://picsum.photos/200",
-      "name": "Ragnar Lothbrok",
-      "power": 95,
-      "description": "Fearless Viking leader with unmatched strategic prowess."
+      "type": "test",
+      "power": 1,
+      "description": "test"
     },
     {
-      "id": 2,
+      "id": "7796",
       "image": "https://picsum.photos/200",
-      "name": "Lagertha",
-      "power": 88,
-      "description": "Fierce shieldmaiden skilled in combat and renowned for her bravery."
+      "type": "test2",
+      "power": 1,
+      "description": "test2"
     },
     {
-      "id": 3,
+      "id": "cabd",
       "image": "https://picsum.photos/200",
-      "name": "Floki",
-      "power": 80,
-      "description": "Innovative shipbuilder and eccentric Norseman known for his loyalty."
-    },
-    {
-      "id": 4,
-      "image": "https://picsum.photos/200",
-      "name": "Bjorn Ironside",
-      "power": 92,
-      "description": "Son of Ragnar Lothbrok, a relentless warrior seeking new adventures."
-    },
-    {
-      "id": 5,
-      "image": "https://picsum.photos/200",
-      "name": "Ivar the Boneless",
-      "power": 87,
-      "description": "Strategic and cunning Viking tactician, despite physical challenges."
+      "type": "test333",
+      "power": 1,
+      "description": "test333"
     }
   ]
 }
