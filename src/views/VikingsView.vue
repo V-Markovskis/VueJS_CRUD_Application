@@ -2,7 +2,6 @@
   <main>
     <DisplayAllVikings :vikings="vikings" />
     <CreateNewRecord />
-    <!--    <CreateNewRecord :get-all-records="getAllRecords" />-->
   </main>
 </template>
 

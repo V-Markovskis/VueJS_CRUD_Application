@@ -51,7 +51,6 @@ import { postNewRecord } from "@/callsToDB/postData";
 import type { IViking } from "@/models/viking";
 
 export default {
-  name: "NewVikingRecord",
   setup() {
     //https://stackoverflow.com/questions/46208610/call-parent-method-with-component#:~:text=It's%20possible%20to%20call%20a,that%20exist%20in%20the%20parent.
     const getAllRecords = inject("getAllRecords") as () => Promise<IViking[]>;

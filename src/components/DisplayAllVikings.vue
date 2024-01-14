@@ -10,14 +10,12 @@
   <div v-else>No records about vikings</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { IViking } from "@/models/viking.ts";
 import type { PropType } from "vue";
-export default {
-  name: "DisplayAllVikings",
-  props: {
-    //https://stackoverflow.com/questions/72196164/vue-js-3-declare-a-props-with-array-of-class
-    vikings: Array as PropType<Array<IViking>>,
-  },
-};
+
+defineProps({
+  //https://stackoverflow.com/questions/72196164/vue-js-3-declare-a-props-with-array-of-class
+  vikings: Array as PropType<Array<IViking>>,
+});
 </script>

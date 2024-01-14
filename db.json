@@ -13,6 +13,27 @@
       "type": "HELLO",
       "power": 1,
       "description": "HELLO"
+    },
+    {
+      "id": "1b36",
+      "image": "https://picsum.photos/200",
+      "type": "test",
+      "power": 1,
+      "description": "test"
+    },
+    {
+      "id": "b457",
+      "image": "https://picsum.photos/200",
+      "type": "test",
+      "power": 1,
+      "description": "test"
+    },
+    {
+      "id": "edfb",
+      "image": "https://picsum.photos/200",
+      "type": "HELLOFRIEND",
+      "power": 1,
+      "description": "HELLOFRIEND"
     }
   ]
 }
