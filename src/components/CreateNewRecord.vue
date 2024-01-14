@@ -45,39 +45,41 @@
   </div>
 </template>
 
-<script>
-import { postNewRecord } from "@/callsToDB/postData.ts";
+<script lang="ts">
+import { inject, ref } from "vue";
+import { postNewRecord } from "@/callsToDB/postData";
+import type { IViking } from "@/models/viking";
 
 export default {
   name: "NewVikingRecord",
-  props: {
-    getAllRecords: Function,
-  },
-  data() {
-    return {
-      model: {
-        viking: {
-          image: "",
-          type: "",
-          power: 1,
-          description: "",
-        },
+  setup() {
+    //https://stackoverflow.com/questions/46208610/call-parent-method-with-component#:~:text=It's%20possible%20to%20call%20a,that%20exist%20in%20the%20parent.
+    const getAllRecords = inject("getAllRecords") as () => Promise<IViking[]>;
+    const model = ref({
+      viking: {
+        image: "",
+        type: "",
+        power: 1,
+        description: "",
       },
-    };
-  },
-  methods: {
-    async saveNewRecord() {
-      await postNewRecord(this.model.viking);
-      console.log("this.getAllRecords()", this.getAllRecords());
-      await this.getAllRecords();
+    });
+    const saveNewRecord = async () => {
+      console.log("save button clicked");
+      await postNewRecord(model.value.viking);
+      await getAllRecords();
 
-      this.model.viking = {
+      model.value.viking = {
         image: "",
         type: "",
         power: 1,
         description: "",
       };
-    },
+    };
+
+    return {
+      model,
+      saveNewRecord,
+    };
   },
 };
 </script>
