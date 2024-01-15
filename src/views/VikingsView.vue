@@ -5,32 +5,28 @@
   </main>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import CreateNewRecord from "@/components/CreateNewRecord.vue";
 import { onMounted, provide, ref } from "vue";
 import DisplayAllVikings from "@/components/DisplayAllVikings.vue";
 import type { Ref } from "vue";
 import type { IViking } from "@/models/viking.ts";
 import getAllData from "@/callsToDB/getAllData";
-export default {
-  name: "vikings",
-  components: { CreateNewRecord, DisplayAllVikings },
-  setup() {
-    const vikings: Ref<IViking[]> = ref([]);
+import { getSingleData } from "@/callsToDB/getSingleData";
 
-    const getAllRecords = async () => {
-      vikings.value = await getAllData();
-    };
+const vikings: Ref<IViking[]> = ref([]);
 
-    onMounted(() => {
-      getAllRecords();
-    });
-
-    provide("getAllRecords", getAllRecords);
-
-    return {
-      vikings,
-    };
-  },
+const getAllRecords = async () => {
+  vikings.value = await getAllData();
 };
+
+const getSingleRecord = async (id: number) => {
+  await getSingleData(id);
+};
+
+onMounted(() => {
+  getAllRecords();
+});
+
+provide("dataRequests", { getAllRecords, getSingleRecord });
 </script>

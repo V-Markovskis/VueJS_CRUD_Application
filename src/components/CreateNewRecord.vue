@@ -45,40 +45,36 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { inject, ref } from "vue";
 import { postNewRecord } from "@/callsToDB/postData";
 import type { IViking } from "@/models/viking";
 
-export default {
-  setup() {
-    //https://stackoverflow.com/questions/46208610/call-parent-method-with-component#:~:text=It's%20possible%20to%20call%20a,that%20exist%20in%20the%20parent.
-    const getAllRecords = inject("getAllRecords") as () => Promise<IViking[]>;
-    const model = ref({
-      viking: {
-        image: "",
-        type: "",
-        power: 1,
-        description: "",
-      },
-    });
-    const saveNewRecord = async () => {
-      await postNewRecord(model.value.viking);
-      console.log("getAllRecords()", getAllRecords());
-      await getAllRecords();
+//https://stackoverflow.com/questions/46208610/call-parent-method-with-component#:~:text=It's%20possible%20to%20call%20a,that%20exist%20in%20the%20parent.
+const dataRequests = inject("dataRequests") as {
+  getAllRecords: () => Promise<IViking[]>;
+};
 
-      model.value.viking = {
-        image: "",
-        type: "",
-        power: 1,
-        description: "",
-      };
-    };
+console.log("dataRequests", dataRequests);
+const { getAllRecords } = dataRequests;
 
-    return {
-      model,
-      saveNewRecord,
-    };
+const model = ref({
+  viking: {
+    image: "",
+    type: "",
+    power: 1,
+    description: "",
   },
+});
+const saveNewRecord = async () => {
+  await postNewRecord(model.value.viking);
+  await getAllRecords();
+
+  model.value.viking = {
+    image: "",
+    type: "",
+    power: 1,
+    description: "",
+  };
 };
 </script>

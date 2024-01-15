@@ -1,25 +1,25 @@
 {
   "vikings": [
     {
-      "id": "6902",
+      "id": "3f9c",
       "image": "https://picsum.photos/200",
       "type": "test",
       "power": 1,
       "description": "test"
     },
     {
-      "id": "5095",
+      "id": "a4ee",
       "image": "https://picsum.photos/200",
-      "type": "123",
+      "type": "aaaaaaaa",
       "power": 1,
-      "description": "321"
+      "description": "test"
     },
     {
-      "id": "eadf",
+      "id": "e55e",
       "image": "https://picsum.photos/200",
-      "type": "LOREM",
+      "type": "ttttt",
       "power": 1,
-      "description": "LOREM"
+      "description": "ttttt"
     }
   ]
 }
