@@ -22,6 +22,11 @@ const router = createRouter({
       name: "vikings",
       component: () => import("../views/VikingsView.vue"),
     },
+    {
+      path: "/vikings/:id",
+      name: "viking",
+      component: () => import("../components/DisplaySingleViking.vue"),
+    },
   ],
 });
 

@@ -63,8 +63,8 @@ export default {
       },
     });
     const saveNewRecord = async () => {
-      console.log("save button clicked");
       await postNewRecord(model.value.viking);
+      console.log("getAllRecords()", getAllRecords());
       await getAllRecords();
 
       model.value.viking = {

@@ -1,39 +1,25 @@
 {
   "vikings": [
     {
-      "id": "eb50",
-      "image": "https://picsum.photos/200",
-      "type": "teest",
-      "power": 1,
-      "description": "teata"
-    },
-    {
-      "id": "2834",
-      "image": "https://picsum.photos/200",
-      "type": "HELLO",
-      "power": 1,
-      "description": "HELLO"
-    },
-    {
-      "id": "1b36",
+      "id": "6902",
       "image": "https://picsum.photos/200",
       "type": "test",
       "power": 1,
       "description": "test"
     },
     {
-      "id": "b457",
+      "id": "5095",
       "image": "https://picsum.photos/200",
-      "type": "test",
+      "type": "123",
       "power": 1,
-      "description": "test"
+      "description": "321"
     },
     {
-      "id": "edfb",
+      "id": "eadf",
       "image": "https://picsum.photos/200",
-      "type": "HELLOFRIEND",
+      "type": "LOREM",
       "power": 1,
-      "description": "HELLOFRIEND"
+      "description": "LOREM"
     }
   ]
 }

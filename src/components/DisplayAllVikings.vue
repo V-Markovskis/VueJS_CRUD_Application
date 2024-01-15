@@ -2,7 +2,9 @@
   <div v-if="vikings">
     <div v-for="(viking, index) in vikings" :key="viking.id">
       <img :src="viking.image" :alt="viking.type" width="200" />
-      <h3>Name: {{ viking.type }}</h3>
+      <RouterLink :to="`/vikings/${viking.id}`"
+        ><h3>Type: {{ viking.type }}</h3></RouterLink
+      >
       <small>Power: {{ viking.power }}</small>
       <p>Description: {{ viking.description }}</p>
     </div>
@@ -13,6 +15,7 @@
 <script lang="ts" setup>
 import type { IViking } from "@/models/viking.ts";
 import type { PropType } from "vue";
+import { RouterLink } from "vue-router";
 
 defineProps({
   //https://stackoverflow.com/questions/72196164/vue-js-3-declare-a-props-with-array-of-class
