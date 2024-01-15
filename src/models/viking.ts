@@ -1,5 +1,5 @@
 export interface IViking {
-  id?: number;
+  id?: string;
   image: string;
   type: string;
   power: number;

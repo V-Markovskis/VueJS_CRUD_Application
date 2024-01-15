@@ -55,7 +55,6 @@ const dataRequests = inject("dataRequests") as {
   getAllRecords: () => Promise<IViking[]>;
 };
 
-console.log("dataRequests", dataRequests);
 const { getAllRecords } = dataRequests;
 
 const model = ref({

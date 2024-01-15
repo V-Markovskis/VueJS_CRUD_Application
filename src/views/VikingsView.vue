@@ -20,13 +20,9 @@ const getAllRecords = async () => {
   vikings.value = await getAllData();
 };
 
-const getSingleRecord = async (id: number) => {
-  await getSingleData(id);
-};
-
 onMounted(() => {
   getAllRecords();
 });
 
-provide("dataRequests", { getAllRecords, getSingleRecord });
+provide("dataRequests", { getAllRecords });
 </script>
