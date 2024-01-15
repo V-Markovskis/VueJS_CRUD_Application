@@ -1,23 +1,22 @@
 <template>
   <main>
-    <DisplayAllVikings :vikings="vikings" />
+    <DisplayAllVikings />
     <CreateNewRecord />
   </main>
 </template>
 
 <script lang="ts" setup>
 import CreateNewRecord from "@/components/CreateNewRecord.vue";
-import { onMounted, provide, ref } from "vue";
+import { onMounted, provide } from "vue";
 import DisplayAllVikings from "@/components/DisplayAllVikings.vue";
-import type { Ref } from "vue";
-import type { IViking } from "@/models/viking.ts";
 import getAllData from "@/callsToDB/getAllData";
-import { getSingleData } from "@/callsToDB/getSingleData";
+import { useVikingsStore } from "@/globalStateStorage/store";
 
-const vikings: Ref<IViking[]> = ref([]);
+// const vikings: Ref<IViking[]> = ref([]);
+const vikingStore = useVikingsStore();
 
 const getAllRecords = async () => {
-  vikings.value = await getAllData();
+  vikingStore.vikings = await getAllData();
 };
 
 onMounted(() => {
