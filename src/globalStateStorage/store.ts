@@ -4,5 +4,11 @@ import type { IViking } from "@/models/viking";
 export const useVikingsStore = defineStore("vikings", {
   state: () => ({
     vikings: [] as IViking[],
+    editMode: false,
   }),
+  actions: {
+    toggleEditMode() {
+      this.editMode = !this.editMode;
+    },
+  },
 });

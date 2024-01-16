@@ -1,7 +1,7 @@
 <template>
   <main>
     <DisplayAllVikings />
-    <CreateNewRecord />
+    <CreateNewRecord :getAllRecords="getAllRecords" />
   </main>
 </template>
 
@@ -23,5 +23,5 @@ onMounted(() => {
   getAllRecords();
 });
 
-provide("dataRequests", { getAllRecords });
+// provide("dataRequests", { getAllRecords });
 </script>

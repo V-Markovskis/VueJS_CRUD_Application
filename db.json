@@ -1,3 +1,18 @@
 {
-  "vikings": []
+  "vikings": [
+    {
+      "image": "https://picsum.photos/200",
+      "type": "ASDSADAS",
+      "power": 1,
+      "description": "ASDASDASD",
+      "id": "410e"
+    },
+    {
+      "id": "7958",
+      "image": "https://picsum.photos/200",
+      "type": "HELLO",
+      "power": "22",
+      "description": "HELLO"
+    }
+  ]
 }

@@ -46,34 +46,78 @@
 </template>
 
 <script lang="ts" setup>
-import { inject, ref } from "vue";
+import { ref } from "vue";
 import { postNewRecord } from "@/callsToDB/postData";
 import type { IViking } from "@/models/viking";
+import { useVikingsStore } from "@/globalStateStorage/store";
+import type { PropType, Ref } from "vue";
+import { editData } from "@/callsToDB/editData";
+
+const props = defineProps({
+  //https://stackoverflow.com/questions/72196164/vue-js-3-declare-a-props-with-array-of-class
+  vikingToEdit: Object as PropType<IViking>,
+  getAllRecords: Function,
+  id: String as PropType<string>,
+});
 
 //https://stackoverflow.com/questions/46208610/call-parent-method-with-component#:~:text=It's%20possible%20to%20call%20a,that%20exist%20in%20the%20parent.
-const dataRequests = inject("dataRequests") as {
-  getAllRecords: () => Promise<IViking[]>;
-};
+// const dataRequests = inject("dataRequests") as {
+//   getAllRecords: () => Promise<IViking[]>;
+// };
+//
+// const { getAllRecords } = dataRequests;
 
-const { getAllRecords } = dataRequests;
+const vikingStore = useVikingsStore();
 
-const model = ref({
+let model: Ref<{
   viking: {
-    image: "",
-    type: "",
-    power: 1,
-    description: "",
-  },
-});
-const saveNewRecord = async () => {
-  await postNewRecord(model.value.viking);
-  await getAllRecords();
-
-  model.value.viking = {
-    image: "",
-    type: "",
-    power: 1,
-    description: "",
+    id?: string;
+    image: string;
+    type: string;
+    power: number;
+    description: string;
   };
+}>;
+if (vikingStore.editMode) {
+  if (props.vikingToEdit) {
+    model = ref({
+      viking: {
+        image: props.vikingToEdit.image,
+        type: props.vikingToEdit.type,
+        power: props.vikingToEdit.power,
+        description: props.vikingToEdit.description,
+      },
+    });
+  }
+} else {
+  model = ref({
+    viking: {
+      image: "",
+      type: "",
+      power: 1,
+      description: "",
+    },
+  });
+}
+const saveNewRecord = async () => {
+  if (vikingStore.editMode) {
+    await editData(model.value.viking, props.id!);
+    if (props.getAllRecords) {
+      await props.getAllRecords();
+    }
+    vikingStore.toggleEditMode();
+  } else {
+    await postNewRecord(model.value.viking);
+    if (props.getAllRecords) {
+      await props.getAllRecords();
+    }
+
+    model.value.viking = {
+      image: "",
+      type: "",
+      power: 1,
+      description: "",
+    };
+  }
 };
 </script>

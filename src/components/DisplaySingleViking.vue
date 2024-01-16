@@ -1,12 +1,18 @@
 <template>
-  <div v-if="viking">
-    <img :src="viking.image" :alt="viking.type" width="200" />
-    <h3>Type: {{ viking.type }}</h3>
-    <small>Power: {{ viking.power }}</small>
-    <p>Description: {{ viking.description }}</p>
-    <button @click="deleteViking(viking.id!)">Delete</button>
+  <div v-if="!vikingStore.editMode">
+    <div v-if="viking">
+      <img :src="viking.image" :alt="viking.type" width="200" />
+      <h3>Type: {{ viking.type }}</h3>
+      <small>Power: {{ viking.power }}</small>
+      <p>Description: {{ viking.description }}</p>
+      <button @click="deleteViking(viking.id!)">Delete</button>
+      <button @click="editViking()">Edit</button>
+    </div>
+    <div v-else>No records about Vikings</div>
   </div>
-  <div v-else>No records about Vikings</div>
+  <div v-if="vikingStore.editMode">
+    <CreateNewRecord :vikingToEdit="viking" :id="id"></CreateNewRecord>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -16,6 +22,7 @@ import type { IViking } from "@/models/viking";
 import { getSingleData } from "@/callsToDB/getSingleData";
 import { useVikingsStore } from "@/globalStateStorage/store";
 import { deleteData } from "@/callsToDB/deleteData";
+import CreateNewRecord from "@/components/CreateNewRecord.vue";
 
 const vikingStore = useVikingsStore();
 
@@ -39,6 +46,10 @@ const deleteViking = async (id: string) => {
     state.vikings.splice(index, 1);
     router.push("/vikings");
   });
+};
+
+const editViking = () => {
+  vikingStore.toggleEditMode();
 };
 
 onMounted(async () => {
