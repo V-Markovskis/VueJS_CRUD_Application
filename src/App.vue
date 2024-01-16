@@ -4,16 +4,36 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="container wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink
+          to="/"
+          class="link-info link-offset-2 link-opacity-50-hover link-underline-opacity-0"
+          >Home</RouterLink
+        >
         &nbsp;
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink
+          to="/about"
+          class="link-info link-offset-2 link-opacity-50-hover link-underline-opacity-0"
+          >About</RouterLink
+        >
         &nbsp;
-        <RouterLink to="/vikings">Vikings</RouterLink>
+        <RouterLink
+          to="/vikings"
+          class="link-info link-offset-2 link-opacity-50-hover link-underline-opacity-0"
+          >Vikings</RouterLink
+        >
       </nav>
     </div>
   </header>
 
   <RouterView />
 </template>
+
+<style lang="css" scoped>
+.wrapper {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+</style>
