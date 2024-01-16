@@ -52,6 +52,7 @@ import type { IViking } from "@/models/viking";
 import { useVikingsStore } from "@/globalStateStorage/store";
 import type { PropType, Ref } from "vue";
 import { editData } from "@/callsToDB/editData";
+import getAllData from "@/callsToDB/getAllData";
 
 const props = defineProps({
   //https://stackoverflow.com/questions/72196164/vue-js-3-declare-a-props-with-array-of-class
@@ -60,12 +61,12 @@ const props = defineProps({
   id: String as PropType<string>,
 });
 
-//https://stackoverflow.com/questions/46208610/call-parent-method-with-component#:~:text=It's%20possible%20to%20call%20a,that%20exist%20in%20the%20parent.
-// const dataRequests = inject("dataRequests") as {
-//   getAllRecords: () => Promise<IViking[]>;
-// };
-//
-// const { getAllRecords } = dataRequests;
+let localViking = ref({ ...props.vikingToEdit });
+const emit = defineEmits(["update:viking"]);
+
+const updateViking = () => {
+  emit("update:viking", localViking.value);
+};
 
 const vikingStore = useVikingsStore();
 
@@ -102,9 +103,8 @@ if (vikingStore.editMode) {
 const saveNewRecord = async () => {
   if (vikingStore.editMode) {
     await editData(model.value.viking, props.id!);
-    if (props.getAllRecords) {
-      await props.getAllRecords();
-    }
+    localViking.value = model.value.viking;
+    updateViking();
     vikingStore.toggleEditMode();
   } else {
     await postNewRecord(model.value.viking);

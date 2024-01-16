@@ -11,7 +11,11 @@
     <div v-else>No records about Vikings</div>
   </div>
   <div v-if="vikingStore.editMode">
-    <CreateNewRecord :vikingToEdit="viking" :id="id"></CreateNewRecord>
+    <CreateNewRecord
+      :vikingToEdit="viking"
+      :id="id"
+      @update:viking="handleVikingUpdate"
+    ></CreateNewRecord>
   </div>
 </template>
 
@@ -30,7 +34,7 @@ const route = useRoute();
 const router = useRouter();
 const { id } = route.params as { id: string };
 
-const viking = ref<IViking>({
+let viking = ref<IViking>({
   image: "",
   type: "",
   power: 1,
@@ -55,4 +59,8 @@ const editViking = () => {
 onMounted(async () => {
   viking.value = (await getSingleData(id)) as IViking;
 });
+
+const handleVikingUpdate = (updatedViking: IViking) => {
+  viking.value = updatedViking;
+};
 </script>
