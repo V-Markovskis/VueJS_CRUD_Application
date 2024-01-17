@@ -11,7 +11,7 @@
       <RouterLink
         :to="`/vikings/${viking.id}`"
         class="link-warning link-offset-2 link-opacity-50-hover link-underline-opacity-0"
-        ><h3>Type: {{ viking.type }}</h3></RouterLink
+        ><h3 class="viking-type">Type: {{ viking.type }}</h3></RouterLink
       >
       <small>Power: {{ viking.power }}</small>
     </div>
@@ -28,6 +28,7 @@ const vikingStore = useVikingsStore();
 
 <style lang="css" scoped>
 .vikings-container {
+  margin-top: 40px;
   display: flex;
   gap: 20px;
 }
@@ -39,6 +40,9 @@ const vikingStore = useVikingsStore();
   max-width: 250px;
   background-color: #b7b7ef;
   margin-bottom: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .inner-container {
@@ -50,5 +54,11 @@ const vikingStore = useVikingsStore();
 .image {
   border: 1px solid black;
   border-radius: 8px;
+}
+
+.viking-type {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

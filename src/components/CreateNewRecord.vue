@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="create-viking-container">
     <h3>Create your Viking Type</h3>
     <label for="image">Image URL:</label>
     <br />
@@ -41,7 +41,14 @@
     />
     <br />
     <br />
-    <button @click="saveNewRecord">Save</button>
+    <div class="button-container">
+      <button @click="saveNewRecord" class="btn btn-success">Save</button>
+      <div v-if="vikingStore.editMode">
+        <button @click="vikingStore.toggleEditMode()" class="btn btn-warning">
+          Cancel
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -121,3 +128,18 @@ const saveNewRecord = async () => {
   }
 };
 </script>
+
+<style lang="css" scoped>
+.create-viking-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #50509a;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+}
+</style>

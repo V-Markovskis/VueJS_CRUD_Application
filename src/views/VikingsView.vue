@@ -12,7 +12,6 @@ import DisplayAllVikings from "@/components/DisplayAllVikings.vue";
 import getAllData from "@/callsToDB/getAllData";
 import { useVikingsStore } from "@/globalStateStorage/store";
 
-// const vikings: Ref<IViking[]> = ref([]);
 const vikingStore = useVikingsStore();
 
 const getAllRecords = async () => {
@@ -22,6 +21,4 @@ const getAllRecords = async () => {
 onMounted(() => {
   getAllRecords();
 });
-
-// provide("dataRequests", { getAllRecords });
 </script>
