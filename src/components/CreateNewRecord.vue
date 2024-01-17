@@ -1,5 +1,5 @@
 <template>
-  <div class="create-viking-container">
+  <form class="create-viking-container" @submit.prevent="saveNewRecord">
     <h3>Create your Viking Type</h3>
     <label for="image">Image URL:</label>
     <br />
@@ -8,6 +8,7 @@
       id="image"
       placeholder="as you see this Viking"
       v-model="model.viking.image"
+      required
     />
     <br />
     <br />
@@ -18,16 +19,18 @@
       id="type"
       placeholder="Create name/type"
       v-model="model.viking.type"
+      required
     />
     <br />
     <br />
     <label for="power">Power:</label>
     <br />
     <input
-      type="text"
+      type="number"
       id="power"
       placeholder="1-100"
       v-model="model.viking.power"
+      required
     />
     <br />
     <br />
@@ -38,18 +41,19 @@
       id="description"
       placeholder="Strong as the mountain..."
       v-model="model.viking.description"
+      required
     />
     <br />
     <br />
     <div class="button-container">
-      <button @click="saveNewRecord" class="btn btn-success">Save</button>
+      <button type="submit" class="btn btn-success">Save</button>
       <div v-if="vikingStore.editMode">
         <button @click="vikingStore.toggleEditMode()" class="btn btn-warning">
           Cancel
         </button>
       </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script lang="ts" setup>

@@ -87,6 +87,8 @@ const handleVikingUpdate = (updatedViking: IViking) => {
 .image {
   border: 1px solid black;
   border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .description,

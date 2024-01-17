@@ -1,39 +1,46 @@
 {
   "vikings": [
     {
-      "image": "https://picsum.photos/200",
-      "type": "EDITEDDDDDD",
-      "power": 1,
-      "description": "EDITEDD123",
-      "id": "3d39"
+      "id": "43ab",
+      "image": "https://static.displate.com/857x1200/displate/2022-11-30/dcdc464c425f1d7fe4e7a81a360a446c_2d97e329bcb50c5290a1674b638726ce.jpg",
+      "type": "Warrior",
+      "power": "90",
+      "description": "A fierce Viking warrior with long hair and beard, wearing traditional armor and helmet."
     },
     {
-      "id": "674c",
-      "image": "https://picsum.photos/200",
-      "type": "HELLO",
-      "power": 1,
-      "description": "HELLO"
+      "id": "73da",
+      "image": "https://www.vkngjewelry.com/cdn/shop/files/traditional-viking-shields-handmade-historically-accurate-vkngjewelry-53068586778952.jpg?v=1695820557&width=1445",
+      "type": "Shieldmaiden",
+      "power": "85",
+      "description": "A brave and skilled female warrior, expert in combat and strategy."
     },
     {
-      "image": "https://picsum.photos/200",
-      "type": "testaaaa",
-      "power": 1,
-      "description": "test",
-      "id": "0dd3"
+      "id": "e214",
+      "image": "https://cdn.shopify.com/s/files/1/1565/1123/files/ragnar_vikings_grimfrost_large.jpg?v=1481295399",
+      "type": "Leader",
+      "power": "95",
+      "description": "The leader of the clan, known for his wisdom, strength, and ability to lead his people."
     },
     {
-      "id": "9537",
-      "image": "https://picsum.photos/200",
-      "type": "SPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAM",
-      "power": 1,
-      "description": "SPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAMSPAM"
+      "id": "2d2b",
+      "image": "https://i.pinimg.com/550x/45/e5/0f/45e50f493f11766389f057f791875f28.jpg",
+      "type": "Berserkers",
+      "power": "92",
+      "description": "Berserkers were legendary Viking warriors known for their fearsome and ferocious nature on the battlefield. These elite fighters were driven by battle frenzy, unleashing their primal rage and fighting with seemingly supernatural strength and stamina."
     },
     {
-      "id": "60d4",
-      "image": "https://picsum.photos/200",
-      "type": "text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;",
-      "power": 1,
-      "description": "text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;text-overflow: ellipsis;"
+      "id": "d420",
+      "image": "https://static.wixstatic.com/media/af1176_ee372abb10014ca3a6aac31134701b57~mv2.png/v1/fill/w_474,h_594,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/E4D219CF-FFAA-4C07-B96F-23963F5E5F06_PNG.png",
+      "type": "EDIT ME",
+      "power": "10",
+      "description": "EDIT ME"
+    },
+    {
+      "image": "https://static.wixstatic.com/media/af1176_ee372abb10014ca3a6aac31134701b57~mv2.png/v1/fill/w_474,h_594,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/E4D219CF-FFAA-4C07-B96F-23963F5E5F06_PNG.png",
+      "type": "DELETE ME",
+      "power": "15",
+      "description": "DELETE ME",
+      "id": "890f"
     }
   ]
 }
