@@ -27,20 +27,6 @@
       "type": "Berserkers",
       "power": "92",
       "description": "Berserkers were legendary Viking warriors known for their fearsome and ferocious nature on the battlefield. These elite fighters were driven by battle frenzy, unleashing their primal rage and fighting with seemingly supernatural strength and stamina."
-    },
-    {
-      "id": "d420",
-      "image": "https://static.wixstatic.com/media/af1176_ee372abb10014ca3a6aac31134701b57~mv2.png/v1/fill/w_474,h_594,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/E4D219CF-FFAA-4C07-B96F-23963F5E5F06_PNG.png",
-      "type": "EDIT ME",
-      "power": "10",
-      "description": "EDIT ME"
-    },
-    {
-      "image": "https://static.wixstatic.com/media/af1176_ee372abb10014ca3a6aac31134701b57~mv2.png/v1/fill/w_474,h_594,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/E4D219CF-FFAA-4C07-B96F-23963F5E5F06_PNG.png",
-      "type": "DELETE ME",
-      "power": "15",
-      "description": "DELETE ME",
-      "id": "890f"
     }
   ]
 }
